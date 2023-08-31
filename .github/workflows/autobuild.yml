@@ -224,8 +224,6 @@ jobs:
           path: build
 
       - name: Deploy 🚀
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
           branch: gh-pages
