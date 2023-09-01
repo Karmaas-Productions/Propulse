@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: cc6314b0ffd23304ebd2c869a53ac090
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 118390
+  packageName: FPV Drone Controller
+  packageVersion: 1.4
+  assetPath: Assets/Drones/Course Assets/Models/Loop_Arch/Loop_Arch.prefab
+  uploadId: 283088

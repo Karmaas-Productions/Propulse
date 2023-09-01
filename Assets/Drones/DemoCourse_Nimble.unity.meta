@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 1b8401aac7b243f4db01bbcc286e7631
+timeCreated: 1524313558
+licenseType: Store
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 118390
+  packageName: FPV Drone Controller
+  packageVersion: 1.4
+  assetPath: Assets/Drones/DemoCourse_Nimble.unity
+  uploadId: 283088

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3afd37f072bf6c24b96a4cc6aa394a9d
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 118390
+  packageName: FPV Drone Controller
+  packageVersion: 1.4
+  assetPath: Assets/Drones/DroneController2.0/Models/Drone_nimble/Drone/propellers.mat
+  uploadId: 283088

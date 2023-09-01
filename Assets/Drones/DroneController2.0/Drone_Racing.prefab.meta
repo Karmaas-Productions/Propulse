@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 666dd2b4392f0714eac49637de3da8f3
+timeCreated: 1516463344
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 118390
+  packageName: FPV Drone Controller
+  packageVersion: 1.4
+  assetPath: Assets/Drones/DroneController2.0/Drone_Racing.prefab
+  uploadId: 283088

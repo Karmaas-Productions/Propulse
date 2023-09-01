@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a638d2e680da1334cb4881ad279b8f9e
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 4300000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 118390
+  packageName: FPV Drone Controller
+  packageVersion: 1.4
+  assetPath: Assets/Drones/Course Assets/Models/45_Arch/pb_Mesh-1370986.asset
+  uploadId: 283088

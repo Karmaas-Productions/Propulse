@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: df44b77d8a01af34da8d3f0b48f512e0
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 118390
+  packageName: FPV Drone Controller
+  packageVersion: 1.4
+  assetPath: Assets/Drones/FlightRecorder/Prefabs/Flight Recorder.prefab
+  uploadId: 283088

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 53143f2272023e242a2c2db76c4d4c6b
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 118390
+  packageName: FPV Drone Controller
+  packageVersion: 1.4
+  assetPath: Assets/Drones/RacingFolder/Prefabs/TrackManager_UI.prefab
+  uploadId: 283088

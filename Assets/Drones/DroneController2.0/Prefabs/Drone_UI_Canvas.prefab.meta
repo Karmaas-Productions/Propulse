@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 633346621a1c0714cb64ac9fcb1ccdd9
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 118390
+  packageName: FPV Drone Controller
+  packageVersion: 1.4
+  assetPath: Assets/Drones/DroneController2.0/Prefabs/Drone_UI_Canvas.prefab
+  uploadId: 283088

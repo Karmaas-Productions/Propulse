@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: ce1c6fc2f3acfb54bb07b623efbcc344
+timeCreated: 1525367931
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 118390
+  packageName: FPV Drone Controller
+  packageVersion: 1.4
+  assetPath: Assets/Drones/DroneController2.0/Settings/InputManager.asset
+  uploadId: 283088

@@ -9832,7 +9832,7 @@ MonoBehaviour:
   NetworkConfig:
     ProtocolVersion: 0
     NetworkTransport: {fileID: 1657022663}
-    PlayerPrefab: {fileID: 6549508159034789606, guid: a39720d6bbdc4a2459ec1a76f3959c35, type: 3}
+    PlayerPrefab: {fileID: 9214604949902396158, guid: bfbfdcc7629d9824fa3c0ee435929b9b, type: 3}
     Prefabs:
       NetworkPrefabsLists:
       - {fileID: 11400000, guid: d0edaa34e8e5c9e47abe05f6a05c22da, type: 2}

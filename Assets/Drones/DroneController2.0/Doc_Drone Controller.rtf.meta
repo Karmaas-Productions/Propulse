@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 0585b1400fdc13f4aa9d82344a0baec6
+timeCreated: 1513366316
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 118390
+  packageName: FPV Drone Controller
+  packageVersion: 1.4
+  assetPath: Assets/Drones/DroneController2.0/Doc_Drone Controller.rtf
+  uploadId: 283088
