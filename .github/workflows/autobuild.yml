@@ -31,15 +31,6 @@ jobs:
           git add .
           git reset --hard
 
-      - name: Restore Library cache
-        uses: actions/cache@v2
-        with:
-          path: Library
-          key: Library-build-WebGL
-          restore-keys: |
-            Library-build-
-            Library-
-
       - uses: game-ci/unity-builder@v2
         with:
           targetPlatform: WebGL
@@ -73,15 +64,6 @@ jobs:
           git lfs pull
           git add .
           git reset --hard
-
-      - name: Restore Library cache
-        uses: actions/cache@v2
-        with:
-          path: Library
-          key: Library-build-StandaloneWindows64
-          restore-keys: |
-            Library-build-
-            Library-
 
       - uses: game-ci/unity-builder@v2
         with:
@@ -117,15 +99,6 @@ jobs:
           git add .
           git reset --hard
 
-      - name: Restore Library cache
-        uses: actions/cache@v2
-        with:
-          path: Library
-          key: Library-build-StandaloneOSX
-          restore-keys: |
-            Library-build-
-            Library-
-
       - uses: game-ci/unity-builder@v2
         with:
           targetPlatform: StandaloneOSX
@@ -159,15 +132,6 @@ jobs:
           git lfs pull
           git add .
           git reset --hard
-
-      - name: Restore Library cache
-        uses: actions/cache@v2
-        with:
-          path: Library
-          key: Library-build-StandaloneLinux64
-          restore-keys: |
-            Library-build-
-            Library-
 
       - uses: game-ci/unity-builder@v2
         with:
@@ -203,15 +167,6 @@ jobs:
           git add .
           git reset --hard
  
-      - name: Restore Library cache
-        uses: actions/cache@v2
-        with:
-          path: Library
-          key: Library-build-Android
-          restore-keys: |
-            Library-build-
-            Library-
- 
       - uses: game-ci/unity-builder@v2
         with:
           targetPlatform: Android
@@ -246,15 +201,6 @@ jobs:
           git add .
           git reset --hard
 
-      - name: Restore Library cache
-        uses: actions/cache@v2
-        with:
-          path: Library
-          key: Library-build-iOS
-          restore-keys: |
-            Library-build-
-            Library-
-
       - uses: game-ci/unity-builder@v2
         with:
           targetPlatform: iOS
@@ -278,8 +224,6 @@ jobs:
           path: build
 
       - name: Deploy 🚀
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
           branch: gh-pages
