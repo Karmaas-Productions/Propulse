@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/LobbyScene.unity
     guid: d65f5ad5afd08ba49961326ed2b9bebd
   - enabled: 1
-    path: Assets/Drones/DemoCourse_Racer.unity
+    path: Assets/Scripts and Assets/Drones/Other/DemoMaps/DemoCourse_Racer.unity
     guid: 224272a7d2e0fd74bb5425fa1f10403b
   - enabled: 0
     path: Assets/Scenes/GameScene.unity
