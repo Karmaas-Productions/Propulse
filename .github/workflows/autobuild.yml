@@ -2,6 +2,8 @@ name: Build Game 🎮
 
 on: workflow_dispatch
 
+runs-on: self-hosted
+
 env:
   UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
 
