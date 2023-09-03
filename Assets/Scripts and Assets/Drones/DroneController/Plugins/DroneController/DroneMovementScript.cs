@@ -2,6 +2,7 @@
 using System.Collections;
 using DroneController.CameraMovement;
 using DroneController.Profiles;
+using UnityEditor;
 
 namespace DroneController
 {
@@ -312,7 +313,62 @@ namespace DroneController
 			float fixedDeltaTime;
 			float deltaTime;
 
-			private void MotorsForceLogic()
+			public void ResetPitch()
+			{
+				CustomFeed_pitch = 0;
+			}
+
+			public void ResetYaw()
+			{
+				CustomFeed_yaw = 0;
+			}
+
+			public void ResetRoll()
+			{
+				CustomFeed_roll = 0;
+			}
+
+			public void ResetThrottle()
+			{
+				CustomFeed_throttle = 0;
+			}
+
+			public void MobileForward()
+			{
+				CustomFeed_pitch = 0.65f;
+			}
+
+            public void MobileBackward()
+            {
+                CustomFeed_pitch = -0.65f;
+            }
+
+            public void MobileYawLeft()
+            {
+                CustomFeed_yaw = 0.65f;
+            }
+
+            public void MobileYawRight()
+            {
+                CustomFeed_yaw = -0.65f;
+            }
+
+            public void MobileThrottleUp()
+            {
+                CustomFeed_throttle = 0.65f;
+            }
+
+            public void MobileRollLeft()
+            {
+                CustomFeed_roll = -0.65f;
+            }
+
+            public void MobileRollRight()
+            {
+				CustomFeed_roll = 0.65f;
+            }
+
+            private void MotorsForceLogic()
 			{
 				while (true)
 				{
@@ -912,9 +968,17 @@ namespace DroneController
 				{
 					CustomInputFeed();
 				}
-			}
 
-			private void CustomInputFeed()
+#if UNITY_ANDROID
+				CustomInputFeed();
+#endif
+
+#if UNITY_IOS
+				CustomInputFeed();
+#endif
+            }
+
+            private void CustomInputFeed()
 			{
 				//PITCHING
 				Vertical_W = CustomFeed_pitch;
@@ -1117,7 +1181,7 @@ namespace DroneController
 				proppelerSpeedPercentage[_thatproppelerIndex] = 0.4f;
 			}
 
-			#endregion
+#endregion
 
 			#region PRIVATE Coroutine METHODS
 
