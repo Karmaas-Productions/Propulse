@@ -2,15 +2,13 @@ name: Build Game 🎮
 
 on: workflow_dispatch
 
-runs-on: self-hosted
-
 env:
   UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
 
 jobs: 
   buildWebGL:
     name: Build for WebGL 🌐
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     strategy:
       fail-fast: false
     steps:
@@ -44,7 +42,7 @@ jobs:
 
   buildWindows:
     name: Build for Windows 🖥️
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     strategy:
       fail-fast: false
     steps:
@@ -78,7 +76,7 @@ jobs:
 
   buildmacOS:
     name: Build for macOS 🖥️
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     strategy:
       fail-fast: false
     steps:
@@ -112,7 +110,7 @@ jobs:
 
   buildLinux:
     name: Build for Linux 🖥️
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     strategy:
       fail-fast: false
     steps:
@@ -146,7 +144,7 @@ jobs:
 
   buildAndroid:
     name: Build for Android 📱
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     strategy:
       fail-fast: false
     steps:
@@ -180,7 +178,7 @@ jobs:
 
   buildiOS:
     name: Build for iOS 📱
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     strategy:
       fail-fast: false
     steps:
@@ -215,7 +213,7 @@ jobs:
   deployPages:
     needs: buildWebGL
     name: Deploy to Github Pages 🚀
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
