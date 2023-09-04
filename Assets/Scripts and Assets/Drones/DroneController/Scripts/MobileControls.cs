@@ -7,7 +7,7 @@ public class MobileControls : MonoBehaviour
 {
     public GameObject androidIOSContainer; // Container for buttons on Android and iOS
 
-    private void Start()
+    private void Awake()
     {
 
         // Show/hide buttons based on platform
