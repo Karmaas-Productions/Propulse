@@ -495,10 +495,16 @@ namespace DroneController
 
 			public virtual void Start()
 			{
+#if UNITY_ANDROID
+                CustomInputFeed();
+#elif UNITY_IOS
+             	CustomInputFeed();
+#else
+             	Debug.Log("This code runs on other platforms");
+#endif
+            }
 
-			}
-
-			private void OnEnable()
+            private void OnEnable()
 			{
 				motorsFullSpeedRecovery = new System.Threading.Thread(MotorsForceLogic);
 				dragManagerCalculation = new System.Threading.Thread(DragManagerCalculation);
@@ -968,14 +974,6 @@ namespace DroneController
 				{
 					CustomInputFeed();
 				}
-
-#if UNITY_ANDROID
-				CustomInputFeed();
-#endif
-
-#if UNITY_IOS
-				CustomInputFeed();
-#endif
             }
 
             private void CustomInputFeed()
