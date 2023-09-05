@@ -495,13 +495,7 @@ namespace DroneController
 
 			public virtual void Start()
 			{
-#if UNITY_ANDROID
-                CustomInputFeed();
-#elif UNITY_IOS
-             	CustomInputFeed();
-#else
-             	Debug.Log("This code runs on other platforms");
-#endif
+			
             }
 
             private void OnEnable()
@@ -540,6 +534,14 @@ namespace DroneController
 				DragManager(); //making our drone not get infite speed
 				DroneSound(); //sound producing stuff
 				CameraCorrectPickAndTranslatingInputToWSAD(); //setting input for keys, translating joystick, mobile inputs as WSAD (depending on which is turned on)
+				
+#if UNITY_ANDROID
+                CustomInputFeed();
+#elif UNITY_IOS
+             	CustomInputFeed();
+#else
+             	Debug.Log("This code runs on other platforms");
+#endif
 			}
 
 			private void OnDrawGizmos()
