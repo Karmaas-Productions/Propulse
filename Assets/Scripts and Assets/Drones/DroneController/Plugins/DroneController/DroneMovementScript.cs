@@ -302,7 +302,7 @@ namespace DroneController
 
 			private Vector3 OurDroneTransformUp;
 
-			private bool flightRecorderOverride;
+            private bool flightRecorderOverride;
 			#endregion
 
 			#region Threaded Methods
@@ -367,6 +367,8 @@ namespace DroneController
             {
 				CustomFeed_roll = 0.65f;
             }
+			
+
 
             private void MotorsForceLogic()
 			{
@@ -534,15 +536,7 @@ namespace DroneController
 				DragManager(); //making our drone not get infite speed
 				DroneSound(); //sound producing stuff
 				CameraCorrectPickAndTranslatingInputToWSAD(); //setting input for keys, translating joystick, mobile inputs as WSAD (depending on which is turned on)
-				
-#if UNITY_ANDROID
-                CustomInputFeed();
-#elif UNITY_IOS
-             	CustomInputFeed();
-#else
-             	Debug.Log("This code runs on other platforms");
-#endif
-			}
+            }
 
 			private void OnDrawGizmos()
 			{
@@ -1207,5 +1201,5 @@ namespace DroneController
 			#endregion
 
 		}
-	}
+    }
 }
