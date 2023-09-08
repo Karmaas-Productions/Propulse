@@ -1,4 +1,4 @@
-﻿using DroneController.Physics;
+using DroneController.Physics;
 using Unity.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -70,36 +70,42 @@ public class DroneMovement : DroneMovementScript
     {
         Debug.Log("Works");
         CustomFeed_pitch = 0.65f;
+		Vertical_W = 0.65f;
     }
 
     void OnAKeyPress()
     {
         Debug.Log("Works");
         CustomFeed_yaw = 0.65f;
+		Horizontal_A = 0.65f;;
     }
 
     void OnSKeyPress()
     {
         Debug.Log("Works");
         CustomFeed_pitch = -0.65f;
+		Vertical_S = -0.65f;
     }
 
     void OnDKeyPress()
     {
         Debug.Log("Works");
         CustomFeed_yaw = -0.65f;
+		Horizontal_D = -0.65f;
     }
 
     void OnIKeyPress()
     {
         Debug.Log("Works");
         CustomFeed_throttle = 0.65f;
+		Vertical_I = 0.65f;
     }
 
     void OnJKeyPress()
     {
         Debug.Log("Works");
         CustomFeed_roll = -0.65f;
+		Horizontal_J = -0.65f;
     }
 
     void OnKKeyPress()
@@ -111,42 +117,55 @@ public class DroneMovement : DroneMovementScript
     {
         Debug.Log("Works");
         CustomFeed_roll = 0.65f;
+		Horizontal_L = 0.65f;
     }
 
     void OnWKeyRelease()
     {
         Debug.Log("Works");
-        ResetPitch();
+        CustomFeed_pitch = 0;
+		Vertical_W = 0;
+		Vertical_S = 0;
     }
 
     void OnAKeyRelease()
     {
         Debug.Log("Works");
-        ResetYaw();
+        CustomFeed_yaw = 0;
+		Horizontal_A = 0;
+		Horizontal_D = 0;
     }
 
     void OnSKeyRelease()
     {
         Debug.Log("Works");
-        ResetPitch();
+        CustomFeed_pitch = 0;
+		Vertical_W = 0;
+		Vertical_S = 0;
     }
 
     void OnDKeyRelease()
     {
         Debug.Log("Works");
-        ResetYaw();
+        CustomFeed_yaw = 0;
+		Horizontal_A = 0;
+		Horizontal_D = 0;
     }
 
     void OnIKeyRelease()
     {
         Debug.Log("Works");
-        ResetThrottle();
+        CustomFeed_throttle = 0;
+		Vertical_I = 0;
+		Vertical_S = 0;
     }
 
     void OnJKeyRelease()
     {
         Debug.Log("Works");
-        ResetRoll();
+        CustomFeed_roll = 0;
+		Horizontal_J = 0;
+		Horizontal_L = 0;
     }
 
     void OnKKeyRelease()
@@ -157,7 +176,9 @@ public class DroneMovement : DroneMovementScript
     void OnLKeyRelease()
     {
         Debug.Log("Works");
-        ResetRoll();
+        CustomFeed_roll = 0;
+		Horizontal_J = 0;
+		Horizontal_L = 0;
     }
 
     private void SceneChangeOnClick()
