@@ -19098,7 +19098,7 @@ MonoBehaviour:
     minAngularDrag: 0.05
     angularDragZeroingTime: 2.5
     rotationSlowDown: 5
-  inputEditorSelection: 0
+  inputEditorSelection: 1
   joystick_turned_on: 0
   mainCamera: {fileID: 0}
   droneObject: {fileID: 6875687456149796095}
@@ -19145,7 +19145,7 @@ MonoBehaviour:
   CustomFeed_roll: 0
   CustomFeed_yaw: 0
   CustomFeed_throttle: 1
-  customFeed: 1
+  customFeed: 0
   Vertical_W: 0
   Horizontal_D: 0
   Vertical_I: 0
