@@ -307,6 +307,9 @@ namespace DroneController
 
 			#region Threaded Methods
 
+			System.Threading.Thread motorsFullSpeedRecovery;
+			System.Threading.Thread dragManagerCalculation;
+			System.Threading.Thread rotationCalculation;
 			float fixedDeltaTime;
 			float deltaTime;
 
@@ -382,7 +385,7 @@ namespace DroneController
 			
 
 
-            IEnumerator MotorsForceLogic()
+            private void MotorsForceLogic()
 			{
 				while (true)
 				{
@@ -404,24 +407,23 @@ namespace DroneController
 					{
 						proppelerSpeedPercentage[i] = Mathf.Lerp(proppelerSpeedPercentage[i], 1, fixedDeltaTime * 10);
 					}
-
-					yield return new WaitForEndOfFrame();
+					System.Threading.Thread.Sleep((int)(1.0f / (1.0f / fixedDeltaTime) * 1000));
 				}
 			}
 
-			IEnumerator DragManagerCalculation()
+			void DragManagerCalculation()
 			{
 				while (true)
 				{
 					float evaluatedValue = dragValueCurve.Evaluate(velocity / maxSpeed);
 					currentDrag = maxDrag * evaluatedValue;
 					currentDrag = Mathf.Clamp(currentDrag, minDrag, maxDrag);
-					yield return new WaitForEndOfFrame();
+					System.Threading.Thread.Sleep((int)(1.0f / (1.0f / deltaTime) * 1000));
 				}
 
 			}
 
-			IEnumerator RotationCalculation()
+			void RotationCalculation()
 			{
 				while (true)
 				{
@@ -487,8 +489,7 @@ namespace DroneController
 
 						rollForce = rolling_right + rolling_left + pitching_forward + pitching_backward + yawing_left + yawing_right;
 					}
-
-					yield return new WaitForEndOfFrame();
+					System.Threading.Thread.Sleep((int)(1.0f / (1.0f / fixedDeltaTime) * 1000));
 				}
 			}
 
@@ -509,16 +510,27 @@ namespace DroneController
 				proppelerForceBasedOnJoystickInput = new float[4];						
 			}
 
+			public virtual void Start()
+			{
+				customFeed = true;
+            }
+
             private void OnEnable()
 			{
-				StartCoroutine(MotorsForceLogic());
-				StartCoroutine(DragManagerCalculation());
-				StartCoroutine(RotationCalculation());
+				motorsFullSpeedRecovery = new System.Threading.Thread(MotorsForceLogic);
+				dragManagerCalculation = new System.Threading.Thread(DragManagerCalculation);
+				rotationCalculation = new System.Threading.Thread(RotationCalculation);
+
+				motorsFullSpeedRecovery.Start();
+				dragManagerCalculation.Start();
+				rotationCalculation.Start();
 			}
 
 			private void OnDisable()
 			{
-				StopAllCoroutines();
+				motorsFullSpeedRecovery.Abort();
+				dragManagerCalculation.Abort();
+				rotationCalculation.Abort();
 			}
 
 			public virtual void FixedUpdate()
@@ -528,6 +540,8 @@ namespace DroneController
 				GetVelocity(); //just reading velocity
 				MovementUpDown(); //hovering up and down
 				PitchingRollingYawing(); //method name says it all... 
+				//CustomInputFeed();
+				SettingControllerToInputSettings(); //sensitivity settings for joystick,keyboard,mobile (depending on which is turned on)
 			}
 
 			public virtual void Update()
@@ -537,8 +551,8 @@ namespace DroneController
 				SettingCenterOffMass(); //updating our drone center of mass
 				DragManager(); //making our drone not get infite speed
 				DroneSound(); //sound producing stuff
-				SettingControllerToInputSettings(); //sensitivity settings for joystick,keyboard,mobile (depending on which is turned on)
-				CameraCorrectPickAndTranslatingInputToWSAD(); //setting input for keys, translating joystick, mobile inputs as WSAD (depending on which is turned on)
+				customFeed = true;
+				//CameraCorrectPickAndTranslatingInputToWSAD(); //setting input for keys, translating joystick, mobile inputs as WSAD (depending on which is turned on)
             }
 
 			private void OnDrawGizmos()
@@ -776,8 +790,6 @@ namespace DroneController
 				if (L == true)
 					Horizontal_L = Mathf.LerpUnclamped(Horizontal_L, -1, Time.deltaTime * 10);
 				else Horizontal_L = Mathf.LerpUnclamped(Horizontal_L, 0, Time.deltaTime * 10);
-
-				Debug.Log(Vertical_W + " " + Vertical_I);
 			}
 
 			/// <summary>
@@ -960,16 +972,21 @@ namespace DroneController
 			/// </summary>
 			public void SettingControllerToInputSettings()
 			{
-                if (customFeed)
-                {
-					CustomInputFeed();
-					return;
-                }
-
-				if (joystick_turned_on == false)
-					Input_Mobile_Sensitvity_Calculation();//returns lineary pressed WSAD keys for PC and mobile, joystick has sensitvity builtin by default
+				if (customFeed == false)
+				{
+					if (joystick_turned_on == false)
+					{
+						Input_Mobile_Sensitvity_Calculation();//returns lineary pressed WSAD keys for PC and mobile, joystick has sensitvity builtin by default
+					}
+					else
+					{
+						Joystick_Input_Sensitivity_Calculation();
+					}
+				}
 				else
-					Joystick_Input_Sensitivity_Calculation();
+				{
+					CustomInputFeed();
+				}
             }
 
             private void CustomInputFeed()
@@ -1014,39 +1031,41 @@ namespace DroneController
 			/// so it works cross platforms and if we add a new controller typed
 			/// </summary>
 			public void CameraCorrectPickAndTranslatingInputToWSAD()
-            {
-                /*
+			{
+				/*
                  * If we picked the drone we wish to control and if its the same one as this one
                  * control only this drone, else remain uncontrolled
                  */
-                if (customFeed == true || ourDrone.transform != transform)
-					return;
-                
-                if (joystick_turned_on == false)
-                {
-                    W = (Input.GetKey(forward)) ? true : false;
-                    S = (Input.GetKey(backward)) ? true : false;
-                    A = (Input.GetKey(leftward)) ? true : false;
-                    D = (Input.GetKey(rightward)) ? true : false;
+				if (customFeed == true) return;
 
-                    I = (Input.GetKey(upward)) ? true : false;
-                    J = (Input.GetKey(rotateLeftward)) ? true : false;
-                    K = (Input.GetKey(downward)) ? true : false;
-                    L = (Input.GetKey(rotateRightward)) ? true : false;
-					
-					return;
-                }
+				if (mainCamera.ourDrone.transform == transform)
+				{
+					if (joystick_turned_on == false)
+					{
+						W = (Input.GetKey(forward)) ? true : false;
+						S = (Input.GetKey(backward)) ? true : false;
+						A = (Input.GetKey(leftward)) ? true : false;
+						D = (Input.GetKey(rightward)) ? true : false;
 
-                Left_Analog_Y_Translation();
-                Left_Analog_X_Translation();
-                Right_Analog_Y_Translation();
-                Right_Analog_X_Translation();
-            }
+						I = (Input.GetKey(upward)) ? true : false;
+						J = (Input.GetKey(rotateLeftward)) ? true : false;
+						K = (Input.GetKey(downward)) ? true : false;
+						L = (Input.GetKey(rotateRightward)) ? true : false;
+					}
+					if (joystick_turned_on == true)
+					{
+						Left_Analog_Y_Translation();
+						Left_Analog_X_Translation();
+						Right_Analog_Y_Translation();
+						Right_Analog_X_Translation();
+					}
+				}
+			}
 
-            /// <summary>
-            /// Drone Sound Managing
-            /// </summary>
-            public void DroneSound()
+			/// <summary>
+			/// Drone Sound Managing
+			/// </summary>
+			public void DroneSound()
 			{
 				if (droneSound)
 				{
