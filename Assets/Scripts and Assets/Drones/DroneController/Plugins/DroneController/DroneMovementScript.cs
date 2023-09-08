@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using DroneController.CameraMovement;
 using DroneController.Profiles;
@@ -316,56 +316,71 @@ namespace DroneController
 			public void ResetPitch()
 			{
 				CustomFeed_pitch = 0;
+				Vertical_W = 0;
+				Vertical_S = 0;
 			}
 
 			public void ResetYaw()
 			{
 				CustomFeed_yaw = 0;
+				Horizontal_A = 0;
+				Horizontal_D = 0;
 			}
 
 			public void ResetRoll()
 			{
 				CustomFeed_roll = 0;
+				Horizontal_J = 0;
+				Horizontal_L = 0;
 			}
 
 			public void ResetThrottle()
 			{
 				CustomFeed_throttle = 0;
+				Vertical_I = 0;
+				Vertical_S = 0;
 			}
 
 			public void MobileForward()
 			{
 				CustomFeed_pitch = 0.65f;
+				Vertical_W = 0.65f;
 			}
 
             public void MobileBackward()
             {
                 CustomFeed_pitch = -0.65f;
+				Vertical_S = -0.65f;
             }
 
             public void MobileYawLeft()
             {
                 CustomFeed_yaw = 0.65f;
+				Horizontal_A = 0.65f;
             }
 
             public void MobileYawRight()
             {
                 CustomFeed_yaw = -0.65f;
+				Horizontal_D = -0.65f;
             }
 
             public void MobileThrottleUp()
             {
                 CustomFeed_throttle = 0.65f;
+				Vertical_I = 0.65f;
             }
 
             public void MobileRollLeft()
             {
                 CustomFeed_roll = -0.65f;
+				Horizontal_J = -0.65f;
             }
 
             public void MobileRollRight()
             {
 				CustomFeed_roll = 0.65f;
+				Horizontal_L = 0.65f;
             }
 			
 
