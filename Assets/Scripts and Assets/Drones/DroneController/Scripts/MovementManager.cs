@@ -9,7 +9,7 @@ public class MovementManager : NetworkBehaviour
     public GameObject UI;
     public GameObject droneGameObject;
 
-    private void Start()
+    void Start()
     {
         if (!IsOwner)
         {
@@ -23,6 +23,25 @@ public class MovementManager : NetworkBehaviour
                     droneMovementScript.enabled = false;
                 }
             }
+        }
+
+        if (droneGameObject != null)
+        {
+            DroneMovement droneMovement = droneGameObject.GetComponent<DroneMovement>();
+
+            if (droneMovement != null)
+            {
+                // Enable the DroneMovement script on the target GameObject
+                droneMovement.enabled = true;
+            }
+            else
+            {
+                Debug.LogError("DroneMovement script not found on the target GameObject.");
+            }
+        }
+        else
+        {
+            Debug.LogError("Target GameObject is not assigned.");
         }
     }
 }

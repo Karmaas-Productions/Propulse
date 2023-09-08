@@ -497,7 +497,7 @@ namespace DroneController
 
 			public virtual void Start()
 			{
-			
+				customFeed = true;
             }
 
             private void OnEnable()
@@ -525,6 +525,7 @@ namespace DroneController
 				GetVelocity(); //just reading velocity
 				MovementUpDown(); //hovering up and down
 				PitchingRollingYawing(); //method name says it all... 
+				//CustomInputFeed();
 				SettingControllerToInputSettings(); //sensitivity settings for joystick,keyboard,mobile (depending on which is turned on)
 			}
 
@@ -535,7 +536,8 @@ namespace DroneController
 				SettingCenterOffMass(); //updating our drone center of mass
 				DragManager(); //making our drone not get infite speed
 				DroneSound(); //sound producing stuff
-				CameraCorrectPickAndTranslatingInputToWSAD(); //setting input for keys, translating joystick, mobile inputs as WSAD (depending on which is turned on)
+				customFeed = true;
+				//CameraCorrectPickAndTranslatingInputToWSAD(); //setting input for keys, translating joystick, mobile inputs as WSAD (depending on which is turned on)
             }
 
 			private void OnDrawGizmos()

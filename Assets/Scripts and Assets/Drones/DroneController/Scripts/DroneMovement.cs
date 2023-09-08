@@ -68,31 +68,37 @@ public class DroneMovement : DroneMovementScript
 
     void OnWKeyPress()
     {
+        Debug.Log("Works");
         CustomFeed_pitch = 0.65f;
     }
 
     void OnAKeyPress()
     {
+        Debug.Log("Works");
         CustomFeed_yaw = 0.65f;
     }
 
     void OnSKeyPress()
     {
+        Debug.Log("Works");
         CustomFeed_pitch = -0.65f;
     }
 
     void OnDKeyPress()
     {
+        Debug.Log("Works");
         CustomFeed_yaw = -0.65f;
     }
 
     void OnIKeyPress()
     {
+        Debug.Log("Works");
         CustomFeed_throttle = 0.65f;
     }
 
     void OnJKeyPress()
     {
+        Debug.Log("Works");
         CustomFeed_roll = -0.65f;
     }
 
@@ -103,36 +109,43 @@ public class DroneMovement : DroneMovementScript
 
     void OnLKeyPress()
     {
+        Debug.Log("Works");
         CustomFeed_roll = 0.65f;
     }
 
     void OnWKeyRelease()
     {
+        Debug.Log("Works");
         ResetPitch();
     }
 
     void OnAKeyRelease()
     {
+        Debug.Log("Works");
         ResetYaw();
     }
 
     void OnSKeyRelease()
     {
+        Debug.Log("Works");
         ResetPitch();
     }
 
     void OnDKeyRelease()
     {
+        Debug.Log("Works");
         ResetYaw();
     }
 
     void OnIKeyRelease()
     {
+        Debug.Log("Works");
         ResetThrottle();
     }
 
     void OnJKeyRelease()
     {
+        Debug.Log("Works");
         ResetRoll();
     }
 
@@ -143,6 +156,7 @@ public class DroneMovement : DroneMovementScript
 
     void OnLKeyRelease()
     {
+        Debug.Log("Works");
         ResetRoll();
     }
 
