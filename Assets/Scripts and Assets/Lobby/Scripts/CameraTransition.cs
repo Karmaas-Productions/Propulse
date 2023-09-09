@@ -7,6 +7,8 @@ public class CameraTransition : MonoBehaviour
     public CinemachineVirtualCamera virtualCamera;
     public float transitionDuration = 2.0f; // Duration of the camera transition
 
+    public GameObject Selector;
+
     public Transform targetTransform1; // First target transform
     public Transform targetTransform2; // Second target transform
     public Transform targetTransform3; // Third target transform
@@ -16,6 +18,7 @@ public class CameraTransition : MonoBehaviour
     public void MoveCameraToTarget1()
     {
         MoveCameraToTarget(targetTransform1);
+        Selector.SetActive(true);
     }
 
     public void MoveCameraToTarget2()
