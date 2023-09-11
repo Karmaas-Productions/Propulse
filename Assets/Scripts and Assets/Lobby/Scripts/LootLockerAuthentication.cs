@@ -129,6 +129,9 @@ public class LootLockerAuthentication : MonoBehaviour
 
             VerifyPage.SetActive(true);
             SignUpPage.SetActive(false);
+
+            RequestVerification();
+
             OperationFailed.SetActive(false);
 
         });
@@ -145,12 +148,22 @@ public class LootLockerAuthentication : MonoBehaviour
                     Debug.Log("error while logging in");
 
                     OperationFailed.SetActive(true);
+
+                    LogInButton.SetActive(true);
+                    SignUpButton.SetActive(true);
+
+                    Wait.SetActive(false);
                 }
                 else if (!response.SessionResponse.success)
                 {
                     Debug.Log("error while starting session");
 
                     OperationFailed.SetActive(true);
+
+                    LogInButton.SetActive(true);
+                    SignUpButton.SetActive(true);
+
+                    Wait.SetActive(false);
                 }
                 return;
 
