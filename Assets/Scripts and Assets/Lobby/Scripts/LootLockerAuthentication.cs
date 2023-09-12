@@ -14,8 +14,6 @@ public class LootLockerAuthentication : MonoBehaviour
 
     public TMP_InputField resetEmailInputField;
 
-    public TMP_InputField userIdInputField;
-
     public GameObject Authentication;
     public GameObject LogInPage;
     public GameObject SignUpPage;
@@ -33,8 +31,6 @@ public class LootLockerAuthentication : MonoBehaviour
 
     bool rememberMe = true;
 
-    private string token;
-
     private string logInEmail = "Enter your email...";
     private string logInPassword = "Enter your password...";
 
@@ -42,8 +38,6 @@ public class LootLockerAuthentication : MonoBehaviour
     private string signUpPassword = "Enter your password...";
 
     private string resetEmail = "Enter your email...";
-
-    private string userId = "Enter your emailed id...";
 
     private void Start()
     {
@@ -97,19 +91,10 @@ public class LootLockerAuthentication : MonoBehaviour
         }
     }
 
-    private void UpdateUserIdFromInputField()
-    {
-        if (userIdInputField != null)
-        {
-            userId = userIdInputField.text;
-        }
-    }
-
     public void Update()
     {
         UpdateEmailFromInputField();
         UpdatePasswordFromInputField();
-        UpdateUserIdFromInputField();
     }
 
     public void SignUp()
@@ -129,8 +114,6 @@ public class LootLockerAuthentication : MonoBehaviour
 
             VerifyPage.SetActive(true);
             SignUpPage.SetActive(false);
-
-            RequestVerification();
 
             OperationFailed.SetActive(false);
 
@@ -224,25 +207,6 @@ public class LootLockerAuthentication : MonoBehaviour
             SignUpButton.SetActive(true);
             ResetPasswordPage.SetActive(false);
 
-        });
-    }
-
-    public void RequestVerification()
-    {
-        LootLockerSDKManager.WhiteLabelRequestVerification(userId, (response) =>
-        {
-            if (!response.success)
-            {
-                Debug.Log("error requesting account verification");
-
-                OperationFailed.SetActive(true);
-
-                return;
-            }
-
-            Debug.Log("account verification requested successfully");
-
-            LogInPage.SetActive(true);
         });
     }
 

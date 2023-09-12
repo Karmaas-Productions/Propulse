@@ -1,3 +1,5 @@
+#if !UNITY_WEBGL
+
 using UnityEngine;
 using System.Collections;
 using System.Net;
@@ -11,7 +13,8 @@ public class VersionChecker : MonoBehaviour
     private string onlineVersion;
 
     public GameObject updatePrompt;
-    public TMP_Text updateText; 
+    public TMP_Text updateText;
+    public GameObject authenticationObject;
 
     void Start()
     {
@@ -30,11 +33,13 @@ public class VersionChecker : MonoBehaviour
 
         // Compare local and online versions.
         if (localVersion != onlineVersion)
-        {
+        { 
             // The versions do not match.
             // Enable the updatePrompt GameObject and set the updateText.
             updatePrompt.SetActive(true);
             updateText.text = "Your Game is Outdated\n\nPlease update your game to " + onlineVersion;
+
+            authenticationObject.SetActive(false);
         }
         else
         {
@@ -44,3 +49,5 @@ public class VersionChecker : MonoBehaviour
         }
     }
 }
+
+#endif
