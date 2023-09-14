@@ -29,6 +29,8 @@ public class LootLockerAuthentication : MonoBehaviour
     public GameObject signUpButton;
     public GameObject logInButton;
 
+    public GameObject mainMenu;
+
     bool rememberMe = true;
 
     private string logInEmail = "Enter your email...";
@@ -79,14 +81,14 @@ public class LootLockerAuthentication : MonoBehaviour
         {
             if (signUpButton != null)
             {
-                logInButton.SetActive(false);
+                signUpButton.SetActive(false);
             }
         }
         else
         {
             if (signUpButton != null)
             {
-                logInButton.SetActive(true);
+                signUpButton.SetActive(true);
             }
         }
     }
@@ -95,6 +97,19 @@ public class LootLockerAuthentication : MonoBehaviour
     {
         UpdateEmailFromInputField();
         UpdatePasswordFromInputField();
+
+        LootLockerSDKManager.GetPlayerName((response) =>
+        {
+            if (response.success)
+            {
+                Debug.Log("Successfully retrieved player name: " + response.name);
+                Debug.Log(response.name);
+            }
+            else
+            {
+                Debug.Log("Error getting player name");
+            }
+        });
     }
 
     public void SignUp()
@@ -151,6 +166,9 @@ public class LootLockerAuthentication : MonoBehaviour
                 return;
 
                 Authentication.SetActive(false);
+
+                mainMenu.SetActive(true);
+
                 CallMoveCameraToTarget1();
             }
 
