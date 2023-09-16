@@ -26,6 +26,9 @@ public class LootLockerAuthentication : MonoBehaviour
 
     public GameObject cameraTransitionObject;
 
+    public GameObject signUpPage;
+    public GameObject logInPage;
+
     public GameObject signUpButton;
     public GameObject logInButton;
 
@@ -44,6 +47,25 @@ public class LootLockerAuthentication : MonoBehaviour
     private void Start()
     {
         Wait.SetActive(true);
+
+        // Load saved email and password from PlayerPrefs
+        if (PlayerPrefs.HasKey("SavedEmail") && PlayerPrefs.HasKey("SavedPassword"))
+        {
+            logInEmail = PlayerPrefs.GetString("SavedEmail");
+            logInPassword = PlayerPrefs.GetString("SavedPassword");
+        }
+
+        // Set the input fields' text based on the saved data
+        if (logInEmailInputField != null)
+        {
+            logInEmailInputField.text = logInEmail;
+        }
+
+        if (logInPasswordInputField != null)
+        {
+            logInPasswordInputField.text = logInPassword;
+        }
+
         LogIn();
     }
 
@@ -97,19 +119,6 @@ public class LootLockerAuthentication : MonoBehaviour
     {
         UpdateEmailFromInputField();
         UpdatePasswordFromInputField();
-
-        LootLockerSDKManager.GetPlayerName((response) =>
-        {
-            if (response.success)
-            {
-                Debug.Log("Successfully retrieved player name: " + response.name);
-                Debug.Log(response.name);
-            }
-            else
-            {
-                Debug.Log("Error getting player name");
-            }
-        });
     }
 
     public void SignUp()
@@ -150,6 +159,9 @@ public class LootLockerAuthentication : MonoBehaviour
                     LogInButton.SetActive(true);
                     SignUpButton.SetActive(true);
 
+                    signUpPage.SetActive(false);
+                    logInPage.SetActive(false);
+
                     Wait.SetActive(false);
                 }
                 else if (!response.SessionResponse.success)
@@ -161,13 +173,14 @@ public class LootLockerAuthentication : MonoBehaviour
                     LogInButton.SetActive(true);
                     SignUpButton.SetActive(true);
 
+                    signUpPage.SetActive(false);
+                    logInPage.SetActive(false);
+
                     Wait.SetActive(false);
                 }
                 return;
 
                 Authentication.SetActive(false);
-
-                mainMenu.SetActive(true);
 
                 CallMoveCameraToTarget1();
             }
@@ -190,7 +203,14 @@ public class LootLockerAuthentication : MonoBehaviour
                         Debug.Log("session started successfully");
 
                         Authentication.SetActive(false);
+
                         CallMoveCameraToTarget1();
+
+                        PlayerPrefs.SetString("SavedEmail", logInEmail);
+                        PlayerPrefs.SetString("SavedPassword", logInPassword);
+                        PlayerPrefs.Save();
+
+                        mainMenu.SetActive(true);
                     });
                 }
                 else
