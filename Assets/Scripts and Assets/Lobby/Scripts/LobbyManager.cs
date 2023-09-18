@@ -10,6 +10,7 @@ using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
 using System.Threading.Tasks;
 using UnityEngine.SceneManagement;
+using LootLocker.Requests;
 
 public class LobbyManager : MonoBehaviour {
 
@@ -62,7 +63,39 @@ public class LobbyManager : MonoBehaviour {
     private string playerName;
 
 
+    private IEnumerator StartFunctionEveryTwoSeconds()
+    {
+        while (true)
+        {
+            // Call your function here
+            GetPlayerName();
+
+            // Wait for 2 seconds before running the function again
+            yield return new WaitForSeconds(0.5f);
+        }
+    }
+
+    public void GetPlayerName()
+    {
+        LootLockerSDKManager.GetPlayerName((response) =>
+        {
+            if (response.success)
+            {
+                Debug.Log("Successfully retrieved player name: " + response.name);
+
+
+                playerName = response.name;
+            }
+            else
+            {
+                Debug.Log("Error getting player name");
+            }
+        });
+    }
+
     private void Awake() {
+        StartCoroutine(StartFunctionEveryTwoSeconds());
+
         Instance = this;
     }
 

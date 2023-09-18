@@ -9,6 +9,7 @@ public class PurchaseUpgradeTemplate : MonoBehaviour
     public string upgradeKey;
 
     private string currency = "Krunk";
+    private float currentMoney;
 
     public string levelNumber;
 
@@ -22,20 +23,34 @@ public class PurchaseUpgradeTemplate : MonoBehaviour
     public GameObject buyButton;
     public GameObject equiptButton;
 
-    public string equiptedThrusterKey;
-    public string equiptedSensorKey;
-    public string equiptedPropellerKey;
-    public string equiptedChassisKey;
-    public string equiptedWeaponKey;
-    public string equiptedAbilityKey;
+    private string equiptedThrusterKey = "equiptedthruster";
+    private string equiptedSensorKey = "equiptedsensor";
+    private string equiptedPropellerKey = "equiptedpropeller";
+    private string equiptedChassisKey = "equiptedchassis";
+    private string equiptedWeaponKey = "equiptedweapon";
+    private string equiptedAbilityKey = "equiptedability";
 
     public GameObject couldNotAfford;
     public GameObject doesNotOwn;
 
     public float price;
 
+    private IEnumerator StartFunctionEveryTwoSeconds()
+    {
+        while (true)
+        {
+            // Call your function here
+            CheckForOwnerShip();
+
+            // Wait for 2 seconds before running the function again
+            yield return new WaitForSeconds(2f);
+        }
+    }
+
     private void Awake()
     {
+        StartCoroutine(StartFunctionEveryTwoSeconds());
+
         CreateKeys();
         CheckForOwnerShip();
 
@@ -61,6 +76,10 @@ public class PurchaseUpgradeTemplate : MonoBehaviour
                 {
                     Debug.Log("Successfully retrieved player storage with key" + currency + "with value: " + response.payload.value);
 
+                    currentMoney = float.Parse(response.payload.value);
+
+                    currentMoney -= price;
+
                     if (float.Parse(response.payload.value) >= price)
                     {
                         LootLockerSDKManager.UpdateOrCreateKeyValue(upgradeKey, "1", (getPersistentStoragResponse) =>
@@ -68,6 +87,18 @@ public class PurchaseUpgradeTemplate : MonoBehaviour
                             if (getPersistentStoragResponse.success)
                             {
                                 Debug.Log("Successfully purchased weapon" + upgradeKey);
+
+                                LootLockerSDKManager.UpdateOrCreateKeyValue(currency, currentMoney.ToString(), (getPersistentStoragResponse) =>
+                                {
+                                    if (getPersistentStoragResponse.success)
+                                    {
+                                        Debug.Log("Successfully subtracted money " + currentMoney);
+                                    }
+                                    else
+                                    {
+                                        Debug.Log("Error updating player storage from key" + currency);
+                                    }
+                                });
                             }
                             else
                             {
@@ -248,15 +279,34 @@ public class PurchaseUpgradeTemplate : MonoBehaviour
 
     public void CreateKeys()
     {
-        LootLockerSDKManager.UpdateOrCreateKeyValue(upgradeKey, "0", (getPersistentStoragResponse) =>
+        LootLockerSDKManager.GetSingleKeyPersistentStorage(upgradeKey, (response) =>
         {
-            if (getPersistentStoragResponse.success)
+            if (response.success)
             {
-                Debug.Log("Successfully created key " + upgradeKey);
-            } 
+                if (response.payload != null)
+                {
+                    Debug.Log("Successfully retrieved player storage with value: " + response.payload.value);
+                }
+                else
+                {
+                    Debug.Log("Item with key " + upgradeKey + " does not exist");
+
+                    LootLockerSDKManager.UpdateOrCreateKeyValue(upgradeKey, "0", (getPersistentStoragResponse) =>
+                    {
+                        if (getPersistentStoragResponse.success)
+                        {
+                            Debug.Log("Successfully created key " + upgradeKey);
+                        }
+                        else
+                        {
+                            Debug.Log("Error updating player storage from key" + upgradeKey);
+                        }
+                    });
+                }
+            }
             else
             {
-                Debug.Log("Error updating player storage from key" + upgradeKey);
+                Debug.Log("Error getting player storage");
             }
         });
     }

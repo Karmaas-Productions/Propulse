@@ -10448,7 +10448,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _droneMovement: {fileID: 4824071507365821329}
-  _localMotorForce: []
+  _localMotorForce:
+  - {x: 0, y: 0, z: 0}
   _motorImages:
   - {fileID: 3480449836312872398}
   - {fileID: 1635719480598589703}
@@ -15516,7 +15517,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7760859765380101592}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7b53aa04fe3c25e49bd8c6eca90992d7, type: 3}
   m_Name: 
@@ -16094,7 +16095,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.01
-  far clip plane: 1000
+  far clip plane: 20000
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -16106,7 +16107,7 @@ Camera:
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
-  m_HDR: 0
+  m_HDR: 1
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
@@ -18492,7 +18493,7 @@ MonoBehaviour:
   - {fileID: 1565000526478870339}
   - {fileID: 811053008356628189}
   - {fileID: 6309979386227131840}
-  maxSpeed: 75
+  maxSpeed: 100
   maxAngularDrag: 7
   minAngularDrag: 0.05
   angularDragZeroingTime: 2
@@ -18822,7 +18823,7 @@ MonoBehaviour:
     minAngularDrag: 0.05
     angularDragZeroingTime: 1
     rotationSlowDown: 8
-  - maxSpeed: 75
+  - maxSpeed: 100
     maxThrottleForce: 5
     maxPitchForce: 1.8
     maxRollForce: 1.8
@@ -19151,6 +19152,9 @@ MonoBehaviour:
   Vertical_I: 0
   Horizontal_L: 0
   camera: {fileID: 7821564250545967484}
+  equiptedthruster: 0
+  equiptedsensor: 0
+  equiptedpropeller: 0
 --- !u!114 &7833444957199547356
 MonoBehaviour:
   m_ObjectHideFlags: 0

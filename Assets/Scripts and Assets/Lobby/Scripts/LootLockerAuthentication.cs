@@ -12,6 +12,8 @@ public class LootLockerAuthentication : MonoBehaviour
     public TMP_InputField signUpEmailInputField;
     public TMP_InputField signUpPasswordInputField;
 
+    public TMP_InputField playerNameInputField;
+
     public TMP_InputField resetEmailInputField;
 
     public GameObject Authentication;
@@ -23,6 +25,7 @@ public class LootLockerAuthentication : MonoBehaviour
     public GameObject LogInButton;
     public GameObject SignUpButton;
     public GameObject Wait;
+    public GameObject setPlayerName;
 
     public GameObject cameraTransitionObject;
 
@@ -41,6 +44,8 @@ public class LootLockerAuthentication : MonoBehaviour
 
     private string signUpEmail = "Enter your email...";
     private string signUpPassword = "Enter your password...";
+
+    private string playerName = "Enter your desired player name...";
 
     private string resetEmail = "Enter your email...";
 
@@ -115,10 +120,19 @@ public class LootLockerAuthentication : MonoBehaviour
         }
     }
 
+    private void SetPlayerNameFromInputField()
+    {
+        if (playerNameInputField != null)
+        {
+            playerName = playerNameInputField.text;
+        }
+    }
+
     public void Update()
     {
         UpdateEmailFromInputField();
         UpdatePasswordFromInputField();
+        SetPlayerNameFromInputField();
     }
 
     public void SignUp()
@@ -202,15 +216,33 @@ public class LootLockerAuthentication : MonoBehaviour
 
                         Debug.Log("session started successfully");
 
-                        Authentication.SetActive(false);
+                        LootLockerSDKManager.GetPlayerName((response) =>
+                        {
+                            if (response.success)
+                            {
+                                Debug.Log("Successfully retrieved player name: " + response.name);
 
-                        CallMoveCameraToTarget1();
+                                if (response.name == "")
+                                {
+                                    setPlayerName.SetActive(true);
+                                } else
+                                {
+                                    Authentication.SetActive(false);
 
-                        PlayerPrefs.SetString("SavedEmail", logInEmail);
-                        PlayerPrefs.SetString("SavedPassword", logInPassword);
-                        PlayerPrefs.Save();
+                                    CallMoveCameraToTarget1();
 
-                        mainMenu.SetActive(true);
+                                    PlayerPrefs.SetString("SavedEmail", logInEmail);
+                                    PlayerPrefs.SetString("SavedPassword", logInPassword);
+                                    PlayerPrefs.Save();
+
+                                    mainMenu.SetActive(true);
+                                }
+                            }
+                            else
+                            {
+                                Debug.Log("Error getting player name");
+                            }
+                        });
                     });
                 }
                 else
@@ -245,6 +277,31 @@ public class LootLockerAuthentication : MonoBehaviour
             SignUpButton.SetActive(true);
             ResetPasswordPage.SetActive(false);
 
+        });
+    }
+
+    public void SetPlayerName()
+    {
+        LootLockerSDKManager.SetPlayerName(playerName, (response) =>
+        {
+            if (response.success)
+            {
+                Debug.Log("Successfully set player name");
+
+                Authentication.SetActive(false);
+
+                CallMoveCameraToTarget1();
+
+                PlayerPrefs.SetString("SavedEmail", logInEmail);
+                PlayerPrefs.SetString("SavedPassword", logInPassword);
+                PlayerPrefs.Save();
+
+                mainMenu.SetActive(true);
+            }
+            else
+            {
+                Debug.Log("Error setting player name");
+            }
         });
     }
 
