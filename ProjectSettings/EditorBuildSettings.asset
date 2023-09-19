@@ -20,7 +20,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/GameScene/GameScene.unity
     guid: 106a478ee54fcdb4ab92cf44fd4d42f6
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scripts and Assets/Drones/Other/DemoMaps/DemoCourse_Racer.unity
     guid: 224272a7d2e0fd74bb5425fa1f10403b
   m_configObjects: {}
