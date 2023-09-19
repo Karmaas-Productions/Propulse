@@ -25393,21 +25393,22 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'This game was built in unity
+  m_text: 'This game was built in unity by @karmaaaaaaa (Contact me here on discord)
 
 
-    For authentication I used Loot Locker
+    For
+    authentication I used Loot Locker
 
 
-    The
-    API used for Networking was unity Netcode for Gameobjects
+    The API used for Networking was unity
+    Netcode for Gameobjects
 
 
-    For servers and
-    port forwarding, I used Unity Relay
+    For servers and port forwarding, I used Unity Relay
 
 
-    For the Lobby system I used Unity Lobby'
+    For
+    the Lobby system I used Unity Lobby'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
