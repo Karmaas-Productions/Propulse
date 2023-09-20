@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.7302399, g: 0.7889819, b: 0.8498601, a: 1}
+  m_IndirectSpecularColor: {r: 0.72892004, g: 0.7873956, b: 0.85045993, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -20772,7 +20772,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1582917893}
-  - component: {fileID: 1582917892}
   m_Layer: 0
   m_Name: Version Checker
   m_TagString: Untagged
@@ -20780,25 +20779,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1582917892
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1582917891}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8e12461df5e6d44a90a95a00b8f8bef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  githubVersionURL: 'https://raw.githubusercontent.com/LukeGus/Propulse/main/version.txt
-
-'
-  localVersion: 1.0.0
-  updatePrompt: {fileID: 853276528}
-  updateText: {fileID: 1036533808}
-  authenticationObject: {fileID: 914351934}
 --- !u!4 &1582917893
 Transform:
   m_ObjectHideFlags: 0
