@@ -19151,6 +19151,9 @@ MonoBehaviour:
   Horizontal_D: 0
   Vertical_I: 0
   Horizontal_L: 0
+  throttlespeed: 0
+  pitchyawrollspeed: 0
+  targetObject: {fileID: 9214604949902396158}
   camera: {fileID: 7821564250545967484}
   equiptedthruster: 0
   equiptedsensor: 0

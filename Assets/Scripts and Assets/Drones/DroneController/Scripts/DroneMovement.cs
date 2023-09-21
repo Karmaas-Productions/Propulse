@@ -16,6 +16,8 @@ public class DroneMovement : DroneMovementScript
     private bool kKeyPressed = false;
     private bool lKeyPressed = false;
 
+    public GameObject targetObject;
+
     public override void Update()
     {
         base.Update(); //I would suggest you to put code below this line
@@ -180,12 +182,38 @@ public class DroneMovement : DroneMovementScript
         {
             // Run your function here (replace with your desired function)
             DisableCameraInLobby();
+
+            DisablePlayerMovement();
         }
     }
 
     private void DisableCameraInLobby()
     {
         camera.SetActive(false);
+    }
+
+    public void DisablePlayerMovement()
+    {
+        if (targetObject != null)
+        {
+            // Try to find the DroneMovement script on the target GameObject.
+            DroneMovement droneMovementScript = targetObject.GetComponent<DroneMovement>();
+
+            // If the script is found, disable it.
+            if (droneMovementScript != null)
+            {
+                droneMovementScript.enabled = false;
+                Debug.Log("DroneMovement script disabled on " + targetObject.name);
+            }
+            else
+            {
+                Debug.LogWarning("DroneMovement script not found on " + targetObject.name);
+            }
+        }
+        else
+        {
+            Debug.LogError("Target Object not assigned. Please assign the GameObject with the DroneMovement script.");
+        }
     }
 
     private void GetKeyValues()
