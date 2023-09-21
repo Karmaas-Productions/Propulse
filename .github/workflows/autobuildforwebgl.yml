@@ -9,6 +9,7 @@ jobs:
   buildWebGL:
     name: Build for WebGL 🌐
     runs-on: ubuntu-latest
+    
     strategy:
       fail-fast: false
     steps:
@@ -34,6 +35,7 @@ jobs:
       - uses: game-ci/unity-builder@v2
         with:
           targetPlatform: WebGL
+          allowDirtyBuild: true
 
       - uses: actions/upload-artifact@v2
         with:
