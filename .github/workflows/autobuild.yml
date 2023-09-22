@@ -1,4 +1,4 @@
-name: Build Game 🎮
+name: Build Game
 
 on: workflow_dispatch
 
@@ -7,7 +7,7 @@ env:
 
 jobs: 
   buildWebGL:
-    name: Build for WebGL 🌐
+    name: Build for WebGL
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -42,7 +42,7 @@ jobs:
           path: build/WebGL
 
   buildWindows:
-    name: Build for Windows 🖥️
+    name: Build for Windows
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -76,7 +76,7 @@ jobs:
           path: build/StandaloneWindows64
 
   buildmacOS:
-    name: Build for macOS 🖥️
+    name: Build for macOS
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -110,7 +110,7 @@ jobs:
           path: build/StandaloneOSX
 
   buildLinux:
-    name: Build for Linux 🖥️
+    name: Build for Linux
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -144,7 +144,7 @@ jobs:
           path: build/StandaloneLinux64
 
   buildAndroid:
-    name: Build for Android 📱
+    name: Build for Android
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -178,7 +178,7 @@ jobs:
           path: build/Android
 
   buildiOS:
-    name: Build for iOS 📱
+    name: Build for iOS
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -213,7 +213,7 @@ jobs:
           
   deployPages:
     needs: buildWebGL
-    name: Deploy to Github Pages 🚀
+    name: Deploy to Github Pages
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -224,7 +224,7 @@ jobs:
           name: build-WebGL
           path: build
 
-      - name: Deploy 🚀
+      - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
           branch: gh-pages
