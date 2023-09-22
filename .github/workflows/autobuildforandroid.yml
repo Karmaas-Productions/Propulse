@@ -1,4 +1,4 @@
-name: Build Game for Android 🎮
+name: Build Game for Android
 
 on: workflow_dispatch
 
@@ -7,7 +7,7 @@ env:
 
 jobs: 
   buildAndroid:
-    name: Build for Android 📱
+    name: Build for Android
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
