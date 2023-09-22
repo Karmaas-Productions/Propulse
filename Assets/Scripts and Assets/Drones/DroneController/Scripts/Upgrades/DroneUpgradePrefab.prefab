@@ -392,7 +392,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7528593664713076517
 RectTransform:
   m_ObjectHideFlags: 0
@@ -694,7 +694,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeKey: propellerlevelone
-  currentMoney: 0
   levelNumber: 1
   isThrusterItem: 0
   isSensorItem: 0
@@ -720,7 +719,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeKey: propellerleveltwo
-  currentMoney: 0
   levelNumber: 2
   isThrusterItem: 0
   isSensorItem: 0
@@ -746,7 +744,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeKey: propellerlevelthree
-  currentMoney: 0
   levelNumber: 3
   isThrusterItem: 0
   isSensorItem: 0
@@ -772,7 +769,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeKey: propellerlevelfour
-  currentMoney: 0
   levelNumber: 4
   isThrusterItem: 0
   isSensorItem: 0
@@ -1057,7 +1053,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8618126737022126588
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1556,7 +1552,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3905275222977786533
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1813,7 +1809,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &34917330395752038
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1949,7 +1945,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7472711516602099751
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2126,7 +2122,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8474483527707571165
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2383,7 +2379,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6047573462484864752
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2622,8 +2618,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6456139101767037554}
   m_HandleRect: {fileID: 6446932226583335079}
   m_Direction: 0
-  m_Value: 0.00000008402994
-  m_Size: 0.57803464
+  m_Value: 0
+  m_Size: 0.57803476
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2748,7 +2744,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6990184620074046845}
   m_HandleRect: {fileID: 953150590437295480}
   m_Direction: 2
-  m_Value: 1.0000004
+  m_Value: 1
   m_Size: 0.68700004
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -3077,7 +3073,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3349788264362622668
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3684,7 +3680,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3265847504985515446
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3820,7 +3816,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2246522668001415911
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3956,7 +3952,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4745554474266391662
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4092,7 +4088,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6878951057288933598
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5291,7 +5287,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3881629135679007971
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5427,7 +5423,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5027431605163651248
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5640,7 +5636,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6711946967439652420
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6171,7 +6167,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5939193624452772517
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6567,7 +6563,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1303924768141292352
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6614,13 +6610,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeKey: thrusterlevelone
-  currentMoney: 0
   levelNumber: 1
   isThrusterItem: 1
   isSensorItem: 0
   isPropelleritem: 0
   isChassisItem: 0
-  isWeaponitem: 0
+  isWeaponitem: 1
   isAbilityItem: 0
   buyButton: {fileID: 5884654190331118760}
   equiptButton: {fileID: 92482343458481578}
@@ -6640,7 +6635,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeKey: thrusterleveltwo
-  currentMoney: 0
   levelNumber: 2
   isThrusterItem: 1
   isSensorItem: 0
@@ -6666,7 +6660,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeKey: thrusterlevelthree
-  currentMoney: 0
   levelNumber: 3
   isThrusterItem: 1
   isSensorItem: 0
@@ -6692,7 +6685,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeKey: thrusterlevelfour
-  currentMoney: 0
   levelNumber: 4
   isThrusterItem: 1
   isSensorItem: 0
@@ -6718,7 +6710,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeKey: thrusterlevelfive
-  currentMoney: 0
   levelNumber: 5
   isThrusterItem: 1
   isSensorItem: 0
@@ -6744,7 +6735,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeKey: thrusterlevelsix
-  currentMoney: 0
   levelNumber: 6
   isThrusterItem: 1
   isSensorItem: 0
@@ -6770,7 +6760,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeKey: thrusterlevelseven
-  currentMoney: 0
   levelNumber: 7
   isThrusterItem: 1
   isSensorItem: 0
@@ -6800,7 +6789,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4836294302602805115
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7057,7 +7046,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7923753132326978326
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7736,7 +7725,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeKey: sensorlevelone
-  currentMoney: 0
   levelNumber: 1
   isThrusterItem: 0
   isSensorItem: 1
@@ -7762,7 +7750,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeKey: sensorleveltwo
-  currentMoney: 0
   levelNumber: 2
   isThrusterItem: 0
   isSensorItem: 1
@@ -7788,7 +7775,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeKey: sensorlevelthree
-  currentMoney: 0
   levelNumber: 3
   isThrusterItem: 0
   isSensorItem: 1
@@ -7814,7 +7800,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeKey: sensorlevelfour
-  currentMoney: 0
   levelNumber: 4
   isThrusterItem: 0
   isSensorItem: 1
@@ -7840,7 +7825,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeKey: sensorlevelfive
-  currentMoney: 0
   levelNumber: 5
   isThrusterItem: 0
   isSensorItem: 1
@@ -8148,7 +8132,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4931726849566120892
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8284,7 +8268,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1508580080337227448
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8579,7 +8563,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2879537399267218218
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8838,7 +8822,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6353104517084303272
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9241,7 +9225,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5450782449530651969
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9377,7 +9361,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7889980458388018741
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9634,7 +9618,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8884451754327952195
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9770,7 +9754,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5589239876689904854
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10134,7 +10118,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1466613152708594386
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10391,7 +10375,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2303633922282042299
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11024,7 +11008,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6712170234985057160
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11160,7 +11144,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2642402553764511403
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11296,7 +11280,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4238977770582198122
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11464,7 +11448,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeKey: 
-  currentMoney: 0
   levelNumber: 
   isThrusterItem: 0
   isSensorItem: 0
@@ -11666,7 +11649,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7746996202628162056
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11802,7 +11785,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3398680217695620153
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12025,7 +12008,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeKey: chassislevelone
-  currentMoney: 0
   levelNumber: 1
   isThrusterItem: 0
   isSensorItem: 0
@@ -12051,7 +12033,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeKey: chassisleveltwo
-  currentMoney: 0
   levelNumber: 2
   isThrusterItem: 0
   isSensorItem: 0
@@ -12077,7 +12058,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeKey: chassislevelthree
-  currentMoney: 0
   levelNumber: 3
   isThrusterItem: 0
   isSensorItem: 0
@@ -12103,7 +12083,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeKey: chassislevelfour
-  currentMoney: 0
   levelNumber: 4
   isThrusterItem: 0
   isSensorItem: 0
@@ -12129,7 +12108,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeKey: chassislevelfive
-  currentMoney: 0
   levelNumber: 5
   isThrusterItem: 0
   isSensorItem: 0
@@ -12911,7 +12889,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7478130413266016598
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13047,7 +13025,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4550368025859298960
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13679,7 +13657,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3941016868054045191
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13815,7 +13793,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6488627613555191820
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13951,7 +13929,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4626940974817921668
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14363,7 +14341,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7989074778389854687
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14656,7 +14634,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5898857977011477541
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14792,7 +14770,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6978503256703926509
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15125,7 +15103,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7081804267688711312
 RectTransform:
   m_ObjectHideFlags: 0

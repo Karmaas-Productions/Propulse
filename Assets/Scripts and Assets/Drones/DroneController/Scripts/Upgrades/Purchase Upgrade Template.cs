@@ -1,6 +1,5 @@
 using LootLocker.Requests;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -252,7 +251,7 @@ public class PurchaseUpgradeTemplate : MonoBehaviour
             {
                 if (response.payload != null)
                 {
-                    Debug.Log("Successfully retrieved player storage with value: " + response.payload.value);
+                    Debug.Log("Successfully retrieved player storage with " + upgradeKey + " with value: " + response.payload.value);
 
                     if (response.payload.value == "0")
                     {
@@ -268,6 +267,8 @@ public class PurchaseUpgradeTemplate : MonoBehaviour
                 else
                 {
                     Debug.Log("Item with key " + upgradeKey + " does not exist");
+
+                    CreateKeys();
                 }
             }
             else
@@ -285,7 +286,9 @@ public class PurchaseUpgradeTemplate : MonoBehaviour
             {
                 if (response.payload != null)
                 {
-                    Debug.Log("Successfully retrieved player storage with value: " + response.payload.value);
+                    Debug.Log("Successfully retrieved player storage with " + upgradeKey + " with value: " + response.payload.value);
+
+                    Debug.Log("help");
                 }
                 else
                 {
