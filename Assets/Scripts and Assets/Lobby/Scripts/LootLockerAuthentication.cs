@@ -53,6 +53,8 @@ public class LootLockerAuthentication : MonoBehaviour
     {
         Wait.SetActive(true);
 
+        Debug.developerConsoleVisible = true;
+
         // Load saved email and password from PlayerPrefs
         if (PlayerPrefs.HasKey("SavedEmail") && PlayerPrefs.HasKey("SavedPassword"))
         {
