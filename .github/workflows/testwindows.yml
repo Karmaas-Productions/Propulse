@@ -1,4 +1,4 @@
-name: Build Game for Windows 🎮
+name: Build Game for  Test Windows 🎮
 
 on: workflow_dispatch
 
@@ -16,7 +16,18 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Create LFS file list
-        run: git lfs ls-files -l | cut -d' ' -f1 | sort > .lfs-assets-id
+        run: |
+          # Save the current execution policy
+          $originalPolicy = Get-ExecutionPolicy -Scope CurrentUser
+
+          # Set the execution policy to RemoteSigned
+          Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
+
+          # Run the Git LFS command to create the file list
+          git lfs ls-files -l | cut -d' ' -f1 | sort > .lfs-assets-id
+
+          # Restore the original execution policy
+          Set-ExecutionPolicy $originalPolicy -Scope CurrentUser -Force
 
       - name: Restore LFS cache
         uses: actions/cache@v2
@@ -30,22 +41,6 @@ jobs:
           git lfs pull
           git add .
           git reset --hard
-
-      - name: Set Execution Policy and Run Script
-        run: |
-          # Save the current execution policy
-          $originalPolicy = Get-ExecutionPolicy -Scope CurrentUser
-
-          # Set the execution policy to RemoteSigned
-          Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
-
-          # Run the Unity Builder
-          npx @game-ci/unity-builder build -p StandaloneWindows64
-
-          # Restore the original execution policy
-          Set-ExecutionPolicy $originalPolicy -Scope CurrentUser -Force
-        env:
-          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
 
       - name: Archive Build
         uses: actions/upload-artifact@v2
