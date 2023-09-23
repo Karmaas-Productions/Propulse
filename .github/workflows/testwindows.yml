@@ -1,0 +1,54 @@
+name: Build Game for Windows 🎮
+
+on: workflow_dispatch
+
+env:
+  UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+
+jobs:
+  buildWindows:
+    name: Build for Windows 🖥️
+    runs-on: self-hosted
+    strategy:
+      fail-fast: false
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Create LFS file list
+        run: git lfs ls-files -l | cut -d' ' -f1 | sort > .lfs-assets-id
+
+      - name: Restore LFS cache
+        uses: actions/cache@v2
+        id: lfs-cache
+        with:
+          path: .git/lfs
+          key: ${{ runner.os }}-lfs-${{ hashFiles('.lfs-assets-id') }}
+
+      - name: Git LFS Pull
+        run: |
+          git lfs pull
+          git add .
+          git reset --hard
+
+      - name: Set Execution Policy and Run Script
+        run: |
+          # Save the current execution policy
+          $originalPolicy = Get-ExecutionPolicy -Scope CurrentUser
+
+          # Set the execution policy to RemoteSigned
+          Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
+
+          # Run the Unity Builder
+          npx @game-ci/unity-builder build -p StandaloneWindows64
+
+          # Restore the original execution policy
+          Set-ExecutionPolicy $originalPolicy -Scope CurrentUser -Force
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+
+      - name: Archive Build
+        uses: actions/upload-artifact@v2
+        with:
+          name: build-StandaloneWindows64
+          path: build/StandaloneWindows64
