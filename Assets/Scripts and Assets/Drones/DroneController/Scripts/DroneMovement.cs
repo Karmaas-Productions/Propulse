@@ -16,6 +16,8 @@ public class DroneMovement : DroneMovementScript
     private bool kKeyPressed = false;
     private bool lKeyPressed = false;
 
+    private bool isCursorVisible = true;
+
     public GameObject targetObject;
 
     public override void Update()
@@ -35,11 +37,24 @@ public class DroneMovement : DroneMovementScript
         HandleKeyPress(KeyCode.J, ref jKeyPressed, OnJKeyPress, OnJKeyRelease);
         HandleKeyPress(KeyCode.K, ref kKeyPressed, OnKKeyPress, OnKKeyRelease);
         HandleKeyPress(KeyCode.L, ref lKeyPressed, OnLKeyPress, OnLKeyRelease);
+
+        if (Input.GetAxis("Mouse X") != 0 || Input.GetAxis("Mouse Y") != 0)
+        {
+            // Mouse moved, so show the cursor.
+            SetCursorVisibility(true);
+        }
+        else
+        {
+            // Mouse not moved, so hide the cursor.
+            SetCursorVisibility(false);
+        }
     }
 
     public void Start()
     {
         GetKeyValues();
+
+        Cursor.visible = isCursorVisible;
     }
 
     //#################################################################################################################################################################################
@@ -71,31 +86,43 @@ public class DroneMovement : DroneMovementScript
     void OnWKeyPress()
     {
         CustomFeed_pitch = 0.65f;
+
+        Cursor.visible = false;
     }
 
     void OnAKeyPress()
     {
         CustomFeed_yaw = 0.65f;
+
+        Cursor.visible = false;
     }
 
     void OnSKeyPress()
     {
         CustomFeed_pitch = -0.65f;
+
+        Cursor.visible = false;
     }
 
     void OnDKeyPress()
     {
         CustomFeed_yaw = -0.65f;
+
+        Cursor.visible = false;
     }
 
     void OnIKeyPress()
     {
         CustomFeed_throttle = 0.65f;
+
+        Cursor.visible = false;
     }
 
     void OnJKeyPress()
     {
         CustomFeed_roll = -0.65f;
+
+        Cursor.visible = false;
     }
 
     void OnKKeyPress()
@@ -106,36 +133,50 @@ public class DroneMovement : DroneMovementScript
     void OnLKeyPress()
     {
         CustomFeed_roll = 0.65f;
+
+        Cursor.visible = false;
     }
 
     void OnWKeyRelease()
     {
         ResetPitch();
+
+        Cursor.visible = false;
     }
 
     void OnAKeyRelease()
     {
         ResetYaw();
+
+        Cursor.visible = false;
     }
 
     void OnSKeyRelease()
     {
         ResetPitch();
+
+        Cursor.visible = false;
     }
 
     void OnDKeyRelease()
     {
         ResetYaw();
+
+        Cursor.visible = false;
     }
 
     void OnIKeyRelease()
     {
         ResetThrottle();
+
+        Cursor.visible = false;
     }
 
     void OnJKeyRelease()
     {
         ResetRoll();
+
+        Cursor.visible = false;
     }
 
     void OnKKeyRelease()
@@ -146,6 +187,17 @@ public class DroneMovement : DroneMovementScript
     void OnLKeyRelease()
     {
         ResetRoll();
+
+        Cursor.visible = false;
+    }
+
+    private void SetCursorVisibility(bool visible)
+    {
+        if (visible != isCursorVisible)
+        {
+            isCursorVisible = visible;
+            Cursor.visible = isCursorVisible;
+        }
     }
 
     private string equiptedThrusterKey = "equiptedthruster";

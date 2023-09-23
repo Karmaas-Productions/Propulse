@@ -318,6 +318,8 @@ namespace DroneController
                 CustomFeed_pitch = 0;
                 Vertical_W = 0;
                 Vertical_S = 0;
+
+                Cursor.visible = false;
             }
 
             public void ResetYaw()
@@ -325,6 +327,8 @@ namespace DroneController
                 CustomFeed_yaw = 0;
                 Horizontal_A = 0;
                 Horizontal_D = 0;
+
+                Cursor.visible = false;
             }
 
             public void ResetRoll()
@@ -332,6 +336,8 @@ namespace DroneController
                 CustomFeed_roll = 0;
                 Horizontal_J = 0;
                 Horizontal_L = 0;
+
+                Cursor.visible = false;
             }
 
             public void ResetThrottle()
@@ -339,48 +345,64 @@ namespace DroneController
                 CustomFeed_throttle = 0;
                 Vertical_I = 0;
                 Vertical_S = 0;
+
+                Cursor.visible = false;
             }
 
             public void MobileForward()
             {
                 CustomFeed_pitch = pitchyawrollspeed;
                 Vertical_W = pitchyawrollspeed;
+
+                Cursor.visible = false;
             }
 
             public void MobileBackward()
             {
                 CustomFeed_pitch = pitchyawrollspeed;
                 Vertical_S = pitchyawrollspeed;
+
+                Cursor.visible = false;
             }
 
             public void MobileYawLeft()
             {
                 CustomFeed_yaw = pitchyawrollspeed;
                 Horizontal_A = pitchyawrollspeed;
+
+                Cursor.visible = false;
             }
 
             public void MobileYawRight()
             {
                 CustomFeed_yaw = pitchyawrollspeed;
                 Horizontal_D = pitchyawrollspeed;
+
+                Cursor.visible = false;
             }
 
             public void MobileThrottleUp()
             {
                 CustomFeed_throttle = throttlespeed;
                 Vertical_I = throttlespeed;
+
+                Cursor.visible = false;
             }
 
             public void MobileRollLeft()
             {
                 CustomFeed_roll = pitchyawrollspeed;
                 Horizontal_J = pitchyawrollspeed;
+
+                Cursor.visible = false;
             }
 
             public void MobileRollRight()
             {
                 CustomFeed_roll = pitchyawrollspeed;
                 Horizontal_L = pitchyawrollspeed;
+
+                Cursor.visible = false;
             }
 
 
