@@ -170,6 +170,7 @@ public class LootLockerAuthentication : MonoBehaviour
                 {
                     Debug.Log("error while logging in");
 
+                    /*
                     OperationFailed.SetActive(true);
 
                     LogInButton.SetActive(true);
@@ -179,6 +180,14 @@ public class LootLockerAuthentication : MonoBehaviour
                     logInPage.SetActive(false);
 
                     Wait.SetActive(false);
+                    */
+
+                    Authentication.SetActive(false);
+
+                    CallMoveCameraToTarget1();
+
+                    mainMenu.SetActive(true);
+                                    
                 }
                 else if (!response.SessionResponse.success)
                 {
