@@ -1,4 +1,4 @@
-const cacheName = "KarmaasProductions-Propulse-0.0.87";
+const cacheName = "KarmaasProductions-Propulse-0.0.88";
 const contentToCache = [
     "Build/WebGL.loader.js",
     "Build/WebGL.framework.js",
