@@ -51,6 +51,12 @@ public class LootLockerAuthentication : MonoBehaviour
 
     private void Start()
     {
+        Authentication.SetActive(false);
+
+        CallMoveCameraToTarget1();
+
+        mainMenu.SetActive(true);
+        
         Wait.SetActive(true);
 
         Debug.developerConsoleVisible = true;
