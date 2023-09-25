@@ -51,12 +51,6 @@ public class LootLockerAuthentication : MonoBehaviour
 
     private void Start()
     {
-        Authentication.SetActive(false);
-
-        CallMoveCameraToTarget1();
-
-        mainMenu.SetActive(true);
-        
         Wait.SetActive(true);
 
         Debug.developerConsoleVisible = true;
@@ -176,7 +170,6 @@ public class LootLockerAuthentication : MonoBehaviour
                 {
                     Debug.Log("error while logging in");
 
-                    /*
                     OperationFailed.SetActive(true);
 
                     LogInButton.SetActive(true);
@@ -185,15 +178,7 @@ public class LootLockerAuthentication : MonoBehaviour
                     signUpPage.SetActive(false);
                     logInPage.SetActive(false);
 
-                    Wait.SetActive(false);
-                    */
-
-                    Authentication.SetActive(false);
-
-                    CallMoveCameraToTarget1();
-
-                    mainMenu.SetActive(true);
-                                    
+                    Wait.SetActive(false);      
                 }
                 else if (!response.SessionResponse.success)
                 {
