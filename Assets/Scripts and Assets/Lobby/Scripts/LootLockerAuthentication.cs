@@ -141,6 +141,12 @@ public class LootLockerAuthentication : MonoBehaviour
         UpdateEmailFromInputField();
         UpdatePasswordFromInputField();
         SetPlayerNameFromInputField();
+
+        Authentication.SetActive(false);
+
+        CallMoveCameraToTarget1();
+
+        mainMenu.SetActive(true);
     }
 
     public void SignUp()
