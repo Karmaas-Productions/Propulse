@@ -1,9 +1,9 @@
-const cacheName = "KarmaasProductions-Propulse-0.1";
+const cacheName = "KarmaasProductions-Propulse-0.0.87";
 const contentToCache = [
-    "Build/Bluh.loader.js",
-    "Build/Bluh.framework.js",
-    "Build/Bluh.data",
-    "Build/Bluh.wasm",
+    "Build/WebGL.loader.js",
+    "Build/WebGL.framework.js",
+    "Build/WebGL.data",
+    "Build/WebGL.wasm",
     "TemplateData/style.css"
 
 ];
